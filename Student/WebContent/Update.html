@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+	function setValue() {
+
+		let url = new URL(window.location);
+		var studentID = url.searchParams.get("studentID");
+		var firstName = url.searchParams.get("firstName");
+		var lastName = url.searchParams.get("lastName");
+		var fatherName = url.searchParams.get("fatherName");
+		var email = url.searchParams.get("email");
+		var studentClass = url.searchParams.get("studentClass");
+		var age = url.searchParams.get("age");
+
+		document.getElementById("studentID").value = studentID;
+		document.getElementById("firstName").value = firstName;
+		document.getElementById("lastName").value = lastName;
+		document.getElementById("fatherName").value = fatherName;
+		document.getElementById("email").value = email;
+		document.getElementById("class").value = studentClass;
+		document.getElementById("age").value = age;
+	}
+</script>
+
+<meta charset="ISO-8859-1">
+
+<title>Update Student</title>
+
+</head>
+
+<body>
+
+	<form id="updateStudentForm" name="updateStudentForm" action="UpdateStudent" method="post">
+		<h1>Update Student</h1>
+		<input type=text id="studentID" name="studentID" placeholder="Student ID"> 
+		<input type=text id="firstName" name="firstName" placeholder="First Name"> 
+		<input type=text id="lastName" name="lastName" placeholder="Last Name"> 
+		<input type=text id="fatherName" name="fatherName" placeholder="Father Name">
+		<input type="text" id="email" name="email" placeholder="Email-id" required> 
+		<select name="class" id="class">
+			<option>None</option>
+			<option>9</option>
+			<option>10</option>
+			<option>11</option>
+			<option>12</option>
+		</select> <input type="number" id="age" name="age" placeholder="Age"> 
+		<input type="submit" value="Submit" onclick="return checkInputs()">
+	</form>
+	
+</body>
+
+</html>
