@@ -21,28 +21,41 @@ public class AddStudent extends HttpServlet {
 		try {
 			
 			Connection con = DatabaseConnectivity.initializeDatabase();
+			PrintWriter out = response.getWriter();
 			
 			PreparedStatement stmt = con.prepareStatement("insert into student values (Id,?,?,?,?,?,?)");
-			
-			stmt.setString(1, request.getParameter("firstname"));
-			stmt.setString(2, request.getParameter("lastname"));
-			stmt.setString(3, request.getParameter("fathername"));
-			stmt.setString(4, request.getParameter("email"));
-			stmt.setInt(5, Integer.valueOf(request.getParameter("class")));
-			stmt.setInt(6, Integer.valueOf(request.getParameter("age")));
-			
-			stmt.executeUpdate();
-			
-			stmt.close();
-			con.close();
-			
-			PrintWriter out = response.getWriter();
-			out.println("<html><body><b>Successfully Inserted</b><br></body></html>");
-			
-			RequestDispatcher rd=request.getRequestDispatcher("/index.html");
-			rd.include(request, response);
-			out.close();
-			
+			PreparedStatement stmt_email = con.prepareStatement("select email from student");
+			ResultSet rs=stmt_email.executeQuery();
+			String email=request.getParameter("email");
+			Boolean found=true;
+			while(rs.next()){
+				System.out.println(rs.getString(1));
+				if(email.equals(rs.getString(1))){
+					out.println("<html><body><b> Duplicate email </b><br></body></html>");
+					found=false;
+					break;
+				}
+			}
+			if(found){
+				stmt.setString(1, request.getParameter("firstname"));
+				stmt.setString(2, request.getParameter("lastname"));
+				stmt.setString(3, request.getParameter("fathername"));
+				stmt.setString(4, request.getParameter("email"));
+				stmt.setInt(5, Integer.valueOf(request.getParameter("class")));
+				stmt.setInt(6, Integer.valueOf(request.getParameter("age")));
+				
+				stmt.executeUpdate();
+				
+				stmt.close();
+				con.close();
+				
+				
+				out.println("<html><body><b>Successfully Inserted</b><br></body></html>");
+				
+				RequestDispatcher rd=request.getRequestDispatcher("/index.html");
+				rd.include(request, response);
+				out.close();
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

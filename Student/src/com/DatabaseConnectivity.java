@@ -10,7 +10,6 @@ public class DatabaseConnectivity {
     protected static Connection initializeDatabase() 
         throws SQLException, ClassNotFoundException 
     { 
-    	System.out.println("hello from db connectivity");
         // Initialize all the information regarding 
         // Database Connection 
         String dbDriver = "com.mysql.jdbc.Driver"; 

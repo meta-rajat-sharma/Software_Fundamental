@@ -43,13 +43,13 @@ public class ShowStudent extends HttpServlet {
 			out.print("<td>Age</td><td>Action</td></tr>");
 			
 			while (rst.next()) {
-				String studentID = rst.getString(1);
+				String Id = rst.getString(1);
 				String firstName = rst.getString(2);
 				String lastName = rst.getString(3);
 				String fatherName = rst.getString(4);
 				String email = rst.getString(5);
-				String studentClass = rst.getString(6);
-				String age = rst.getString(7);
+				int studentClass = rst.getInt(6);
+				int age = rst.getInt(7);
 
 				out.print("<tr>");
 				out.print("<td >" + rst.getString(1) + "</td>");
@@ -57,17 +57,17 @@ public class ShowStudent extends HttpServlet {
 				out.print("<td >" + rst.getString(3) + "</td>");
 				out.print("<td >" + rst.getString(4) + "</td>");
 				out.print("<td >" + rst.getString(5) + "</td>");
-				out.print("<td >" + rst.getString(6) + "</td>");
-				out.print("<td >" + rst.getString(7) + "</td>");
-				out.print("<td><a href=Update.html?studentID=" + studentID + "&firstName=" + firstName
+				out.print("<td >" + rst.getInt(6) + "</td>");
+				out.print("<td >" + rst.getInt(7) + "</td>");
+				out.print("<td><a href=Update.html?Id=" + Id + "&firstName=" + firstName	 
 						+ "&lastName=" + lastName + "&fatherName=" + fatherName + "&email=" + email + "&studentClass="
 						+ studentClass + "&age=" + age + ">update</a></td>");
 				out.print("</tr>");
 			}
 
 			out.print("</table>");
-			RequestDispatcher rd = request.getRequestDispatcher("index.html");
-			rd.include(request, response);
+//			RequestDispatcher rd = request.getRequestDispatcher("index.html");
+//			rd.include(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

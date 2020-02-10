@@ -5,7 +5,7 @@
 	function setValue() {
 
 		let url = new URL(window.location);
-		var studentID = url.searchParams.get("studentID");
+		var studentID = url.searchParams.get("Id");
 		var firstName = url.searchParams.get("firstName");
 		var lastName = url.searchParams.get("lastName");
 		var fatherName = url.searchParams.get("fatherName");
@@ -26,26 +26,40 @@
 <meta charset="ISO-8859-1">
 
 <title>Update Student</title>
+<style>
+form {
+	margin: 25%;
+	margin-top: 8%;
+	border: 20px solid blueviolet;
+	text-align: center;
+}
+
+input {
+	width: 350px;
+	height: 30px;
+	margin: 20px;
+}
+</style>
 
 </head>
 
-<body>
-
+<body onload="setValue()">
+    
 	<form id="updateStudentForm" name="updateStudentForm" action="UpdateStudent" method="post">
 		<h1>Update Student</h1>
-		<input type=text id="studentID" name="studentID" placeholder="Student ID"> 
-		<input type=text id="firstName" name="firstName" placeholder="First Name"> 
-		<input type=text id="lastName" name="lastName" placeholder="Last Name"> 
-		<input type=text id="fatherName" name="fatherName" placeholder="Father Name">
-		<input type="text" id="email" name="email" placeholder="Email-id" required> 
-		<select name="class" id="class">
-			<option>None</option>
+		Student ID :   <input type=text id="studentID" name="studentID" placeholder="Student ID" readonly><br/>
+		First Name :   <input type=text id="firstName" name="firstName" placeholder="First Name"><br/> 
+		Last Name :   <input type=text id="lastName" name="lastName" placeholder="Last Name"><br/>
+		Father's Name : <input type=text id="fatherName" name="fatherName" placeholder="Father Name"><br/>
+		Email-ID :   <input type="text" id="email" name="email" placeholder="Email-id"><br/>
+		Class : <select name="class" id="class">
 			<option>9</option>
 			<option>10</option>
 			<option>11</option>
 			<option>12</option>
-		</select> <input type="number" id="age" name="age" placeholder="Age"> 
-		<input type="submit" value="Submit" onclick="return checkInputs()">
+		</select><br/>
+		Age :    <input type="number" id="age" name="age" placeholder="Age"><br/> 
+		<input type="submit" value="Submit">
 	</form>
 	
 </body>
