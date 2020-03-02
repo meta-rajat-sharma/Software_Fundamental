@@ -1,0 +1,159 @@
+<!-- for informing browser about the version of html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- title which occurs at the window name -->
+    <title>Metacube Parking System</title>
+
+    <!-- link of the css file and relation -->
+    <link rel="StyleSheet" href="Style.css">
+
+</head>
+
+<body>
+
+    <!-- Division for Navigation bar -->
+    <div class=NavBar>
+        <!-- Here All the four link are provided for different forms -->
+        <a href="#employeeToggle">Add Employee</a>
+        <a href="#vehicleToggle">Add Vehicle  </a>
+        <a href="#feedbackToggle">Give Feedback  </a>
+        <a href="#passOfVehicleToggle">Passes  </a>
+    </div>
+
+    <!-- Division for Image related solution -->
+    <div>
+        <!-- Image reference is provided here -->
+        <img class="imageOfParking" src="ImageParking.jpg" alt="Can't Open Image">
+    </div>
+
+    <!-- it specifies a different form  -->
+    <article>
+        <!-- to hide or view the form  -->
+        <details>
+            <!-- it specifies the heading of the form  -->
+            <summary id="employeeToggle">Employee Registration Form</summary>
+            <!-- Division for Employee Registration form -->
+            <div class="formDivision">
+
+                <!-- Form for Employee Registration Form -->
+                <!-- Here after submitting this form it will redirect to the page again -->
+                <form action="UIAssignment1.html" id="employeeForm" class="form">
+                    <h1>Employee Registration Form</h1>
+
+                    <!-- inputs for Name ,Gender, Email , Password , Confirm Password and Contact Number -->
+                    <input id="empName" type="text" placeholder="Name" required></br>
+                    <label><span class="gender">Gender :</span></label>
+                    <label><input id="optionMale"  type="radio" name="gender"  required><span class="gender">Male</span></label>
+                    <label><input id="optionFemale"  type="radio" name="gender" required><span class="gender">Female</span></label></br>
+                    <input id="empEmailId" type="email" placeholder="Email Id" required></br>
+                    <input id="empPassword" type="password" placeholder="Password" required><br/>
+                    <input id="empConfirmPassword" type="password" placeholder="Confirm Password" required></br>
+                    <input id="empContact" type="number" placeholder="Contact Number" required></br>
+
+                    <!-- for submitting the form -->
+                    <input type="submit" value="Register">
+
+                </form>
+
+            </div>
+        </details>
+    </article>
+
+    <article>
+        <details>
+            <summary id="vehicleToggle">Vehicle Registration Form</summary>
+            <!-- Division for Vehicle Registration form -->
+            <div id="vehicleForm" class="formDivision">
+                <!-- Form for vehicle Registration Form -->
+                <form id="vehicleFormid" action=UIAssignment1.html class="form">
+                    <h1>Vehicle Registration Form</h1>
+
+                    <!-- for getting company, model, type, identification and number of a vehicle -->
+                    <input id="vehicleCompany" type="text" placeholder="Vehicle Make(Company)" required></br>
+                    <input id="vehicleModel" type="text" placeholder="Vehicle Model" required></br>
+                    <select id="vehicleType" required>
+                        <option hidden value="" selected="selected">Vehicle Type</option>
+                        <option value="Cycle">Cycle</option>
+                        <option value="motorCycle">Motor Cycle</option>
+                        <option value="car">Car</option>
+                    </select><br>
+                    <input id="vehicleNumber" type="text" placeholder="Vehicle Number" required></br>
+                    <input type="text" id="empID" placeholder="Employee ID" required></br>
+                    <textarea placeholder="Identification (Textarea - Color, mark,visible accessory etc.)" rows="3" cols="30" required></textarea></br>
+                    <!-- for submitting the response -->
+                    <input type="submit" value="Submit">
+                </form>
+
+            </div>
+    </article>
+    </details>
+
+    <article>
+        <details>
+            <summary id="feedbackToggle">Feedback Form</summary>
+            <!-- Division for Feedback form -->
+            <div id="feedback" class="Feedback">
+
+                <form action="UIAssignment1.html" class="form">
+                    <h1>Feedback Form</h1>
+                    <input type="text" placeholder="Name" required></br>
+                    <input type="email" placeholder="Email" required></br>
+                    <input type="text" placeholder="Subject" required></br>
+                    <textarea placeholder="Valuable Feedback" rows="3" cols="30" required></textarea></br>
+
+                    <!-- For submitting the feedback -->
+                    <input type="submit" value="Send">
+
+                </form>
+
+            </div>
+    </article>
+    </details>
+
+    <article>
+        <details>
+            <summary id="passOfVehicleToggle">Passes</summary>
+            <!-- Division for Passes form -->
+            <div id="passOfVehicle" class="PassOfVehicle">
+
+                <form action="UIAssignment1.html" class="form">
+                    <!-- Table for vehicle type and duration of the Pass with their price -->
+                    <table>
+                        <tr>
+                            <th>Vehicle</th>
+                            <th>Daily</th>
+                            <th>Monthly</th>
+                            <th>Yearly</th>
+                        </tr>
+                        <tr>
+                            <td>Cycle</td>
+                            <td><input type="radio" name="pass" value="5">5</td>
+                            <td><input type="radio" name="pass" value="100">100</td>
+                            <td><input type="radio" name="pass" value="500">500</td>
+                        </tr>
+                        <tr>
+                            <td>Motor Cycle</td>
+                            <td><input type="radio" name="pass" value="10">10</td>
+                            <td><input type="radio" name="pass" value="200">200</td>
+                            <td><input type="radio" name="pass" value="1000">1000</td>
+                        </tr>
+                        <tr>
+                            <td>Car</td>
+                            <td><input type="radio" name="pass" value="20">20</td>
+                            <td><input type="radio" name="pass" value="500">500</td>
+                            <td><input type="radio" name="pass" value="3500">3500</td>
+                        </tr>
+
+                    </table>
+
+                    <input type="submit" value="Buy">
+
+                </form>
+            </div>
+        </details>
+    </article>
+</body>
+
+</html>
