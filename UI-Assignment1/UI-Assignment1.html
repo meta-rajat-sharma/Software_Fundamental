@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="UI-Assignment.css"> -->
+    <title>Metacube Parking System</title>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <div id="topnav" class="navbar">
+        <h3>
+            <a class="anchor-nav" href="#empFormDevision">Add Employee</a>&nbsp;&nbsp;
+            <a class="anchor-nav" href="#vehicleFormDevision">Add Vehicle</a>&nbsp;&nbsp;
+            <a class="anchor-nav" href="#feedbackFormDevision">Give Feedback</a>&nbsp;&nbsp;
+            <a class="anchor-nav" href="#pricingDevision">Pricing</a>&nbsp;&nbsp;
+        </h3>
+    </div>
+
+    <!--Image below the navigation bar-->
+    <div>
+        <img src="C:\Users\Rajat\Desktop\UI Design\ImageParking.jpg" height="750px" alt="Image is not available" href="#empForm">
+    </div>
+
+    <!--Employee form to get data of the employee-->
+    <div style="height: 630px;" id="empFormDevision" class="empdiv">
+        <fieldset class="empfieldset">
+            <legend>Metacube Parking System</legend>
+            <form id="empForm" action="#vehicleForm" class="emp-form">
+
+                <input class="empforminput" id="empName" type="text" placeholder="Full Name" pattern="/^[a-zA-Z- ]{1, 40}$/" required>
+                <br/><label>Gender :</label>
+                <label><input class="empformradio" id="optionMale" style="width:20px;height:20px" type="radio" name="gender" required>Male</label>
+                <label><input class="empformradio" id="optionFemale" style="width:20px;height:20px" type="radio" name="gender" required>Female</label>
+
+                <br/><input class="empforminput" id="empEmailId" type="email" placeholder="Email Id" required>
+                <br/><input class="empforminput" id="empPassword" type="password" placeholder="Password" required>
+                <br/><input class="empforminput" id="empConfirmPassword" type="password" placeholder="Confirm Password" required>
+                <br/><input class="empforminput" id="empContact" type="number" placeholder="Contact Number" maxlength="10" minlength="8" required>
+
+                <br/><input class="empformsubmit" type="submit" value="Register">
+            </form>
+        </fieldset>
+    </div>
+
+    <!--Vehicle form for employee's vehicle information-->
+    <div style="height: 630px;" id="vehicleFormDevision" class="vehiclediv">
+        <fieldset class="vehiclefieldset">
+            <legend>Vehicle Information</legend>
+            <form id="vehicleForm" action="#feedbackForm" class="vehicle-form">
+
+                <input class="vehicleforminput" type="text" placeholder="Vehicle Company" required><br/>
+                <input class="vehicleforminput" type="text" placeholder="Vehicle Model" required><br/>
+
+                <select class="vehicleformselect" id="vehicleType" required>
+                    <option hidden value="">Vehicle Type</option>
+                    <option value="Cycle">Cycle</option>
+                    <option value="Two wheeler">Two Wheeler</option>
+                    <option value="Four wheeler">Four Wheeler</option>
+                </select><br>
+
+                <input class="vehicleforminput" id="vehNumber" type="text" placeholder="Vehicle Number"><br/>
+                <input class="vehicleforminput" id="empID" type="text" placeholder="Employee ID"><br/>
+                <textarea class="vehicleformtextarea" id="vehIdentification" placeholder="Identification"></textarea><br/>
+
+                <input class="vehicleformsubmit" type="button" value="Submit">
+            </form>
+        </fieldset>
+    </div>
+
+    <!--Feedback form for suggestions-->
+    <div style="height: 630px;" id="feedbackFormDevision" class="feedbackdiv">
+        <fieldset class="feedbackfieldset">
+            <legend>Help Us Improve</legend>
+            <form id="feedbackForm" action="#pricing" class="feedback-form">
+                <input class="feedbackforminput" id="nameFeedbackForm" type="text" placeholder="Full Name">
+                <br/><input class="feedbackforminput" id="emailFeedbackForm" type="email" placeholder="Email ID">
+                <br/><input class="feedbackforminput" id="subjectFeedbackForm" type="text" placeholder="Subject" required>
+                <br/><textarea class="feedbackformtextarea" id="suggestionFeedbackForm" placeholder="Suggestion" required></textarea>
+
+                <br/><input class="feedbackformsubmit" type="submit" value="Submit Suggestion">
+            </form>
+        </fieldset>
+    </div>
+
+    <!--Pass Form-->
+    <div style="height: 630px;" id="pricingDevision" class="pricingdiv">
+        <fieldset class="pricingfieldset">
+            <legend>Pricing</legend>
+            <form id="pricing" action="#topnav" class="pricing-form">
+                <table>
+                    <tr>
+                        <th class="pricingformtablehead">Type</th>
+                        <th class="pricingformtablehead">Daily</th>
+                        <th class="pricingformtablehead">Monthly</th>
+                        <th class="pricingformtablehead">Yearly</th>
+                    </tr>
+                    <tr>
+                        <td class="pricingformtabledata">Cycle</td>
+                        <td><input class="pricingformradio" type="radio" name="passValue" value="5" required>5</td>
+                        <td><input class="pricingformradio" type="radio" name="passValue" value="100" required>100</td>
+                        <td><input class="pricingformradio" type="radio" name="passValue" value="500" required>500</td>
+                    </tr>
+                    <tr>
+                        <td class="pricingformtabledata">Two Wheeler</td>
+                        <td><input class="pricingformradio" type="radio" name="passValue" value="10" required>10</td>
+                        <td><input class="pricingformradio" type="radio" name="passValue" value="200" required>200</td>
+                        <td><input class="pricingformradio" type="radio" name="passValue" value="1000" required>1000</td>
+                    </tr>
+                    <tr>
+                        <td class="pricingformtabledata">Four Wheeler</td>
+                        <td><input class="pricingformradio" type="radio" name="passValue" value="20" required>20</td>
+                        <td><input class="pricingformradio" type="radio" name="passValue" value="500" required>500</td>
+                        <td><input class="pricingformradio" type="radio" name="passValue" value="3500" required>3500</td>
+                    </tr>
+                </table>
+
+                <input class="pricingforminput" type="submit" value="Get Pass">
+            </form>
+        </fieldset>
+    </div>
+
+</body>
+
+</html>
