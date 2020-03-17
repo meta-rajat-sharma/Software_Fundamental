@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <script type="text/javascript" src="ParkingSystem.js"></script>
+    <link rel="icon" href="https://image.shutterstock.com/image-vector/car-parking-flat-icon-sign-260nw-282914162.jpg" sizes="19x19">
+    <link rel="stylesheet" href="ParkingSystem.css">
+
+</head>
+
+<body>
+    <!-- heading of page  -->
+    <h1>METACUBE PARKING SYSTEM</h1>
+
+    <!-- division for password input details -->
+    <div id="passwordInput" class="employeePassword" style="display: none;">
+        <h3 class="headingPassword"> <span id="idLabelPassword">Please Enter your Password : </span> </h3>
+        <span id="box-spanPassword"><input id="inputPassword" type="password" placeholder="password"></span>
+    </div>
+
+    <!-- division for all input details -->
+    <div id="formForAllInput" class="employee">
+        <h3 id="headingAllInput" class="headingAllInput"> <span id="idLabel">Please Enter your name : </span> </h3>
+        <span id="boxSpanInput"><input id="input" name="name" type="text" placeholder="" onkeypress="pressEnter( event, this)"></span>
+        <span id="boxSpanTextarea" style="display: none;"><textarea id="inputTextarea" placeholder="Identification"></textarea></span>
+
+        <a id="referenceLink" onclick="nameCheck()"><input type="submit" value="submit"></a>
+    </div>
+
+    <!-- dividion for gender input  -->
+    <div id="formGender" style="display: none;">
+        <h3> <span id="genderIdLabel"> </span></h3>
+        <label> <input id="maleGender" type="radio" name="gender" value="male">Male</label>
+        <label> <input id="femaleGender" type="radio" name="gender" value="female">Female</label>
+        <a id="referenceLink" onclick="genderCheck()"><input type="submit" value="submit"></a>
+
+    </div>
+
+    <!-- division for selection of vehicle type  -->
+    <div id="selectVehicleType" style="display:none">
+        <h3> <span id="vehicleTypeLabel"></span></h3>
+        <select name="vehicle" id="vehicleType">
+			<option value="">--select value--</option>
+			<option value="Cycle">Cycle</option>
+			<option value="TwoWheeler">Motor Cycle</option>
+			<option value="FourWheeler">Four Wheeler</option>
+		</select>
+        <a id="referenceLink" onclick="vehicleTypeCheck()"><input type="submit" value="submit"></a>
+    </div>
+
+    <!-- division containing pass price -->
+    <div id="selectPassType" style="display:none">
+        <h3><label id="idLabelPassType"></label></h3>
+
+        <select id="currency" onchange="currencyConverter()">
+            <option value="rupees">INR</option>
+            <option value="dollar">USD</option>
+            <option value="yen">YEN</option>
+        </select>
+
+        <br/><label> Daily :: <input id="inputDaily" type="radio" value="daily" name="passPrice"> <span id="dailyPrice"></span> </label>
+        <br/><label> Monthly :: <input id="inputMonthly" type="radio" value="monthly" name="passPrice"> <span id="monthlyPrice"></span> </label>
+        <br/><label> Yearly :: <input id="inputYearly" type="radio" value="yearly" name="passPrice"> <span id="yearlyPrice"></span> </label>
+
+        <a id="referenceLink" onclick="passCheck()"><input type="submit" value="submit"></a>
+
+    </div>
+
+    <!-- span for showing final message  -->
+    <h2><span id="finalMessage"></span></h2>
+</body>
+
+</html>
