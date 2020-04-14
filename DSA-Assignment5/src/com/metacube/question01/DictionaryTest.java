@@ -1,4 +1,4 @@
-package com.metacube.Question01;
+package com.metacube.question01;
 
 import static org.junit.Assert.assertEquals;
 
@@ -20,7 +20,7 @@ public class DictionaryTest {
     public void init() {
         JSONParser parser = new JSONParser();
         try {
-            Object jsonObj = parser.parse(new FileReader("C:/Users/Ayush/meta-workspace/DSA-05/src/data.json"));
+            Object jsonObj = parser.parse(new FileReader("C:\\Users\\Rajat\\WEB\\DSA-Assignment5\\src\\data.json"));
             json = (JSONObject)jsonObj;
         }catch(Exception e) {
             System.out.println(e.getMessage());
@@ -28,12 +28,12 @@ public class DictionaryTest {
         dictionary = new DictionaryImpl(json);
     }
     
-    
     @Test
     public void getTest() {
         String value = dictionary.get("cancel");
         assertEquals(value,"to decide or announce that a planned event will not take place; call off");
     }
+    
     @Test
     public void getAllTest() {
         Map<String,String> entries = dictionary.getAll();
@@ -47,6 +47,7 @@ public class DictionaryTest {
         
         assertEquals(expected,entries);
     }
+    
     @Test
     public void getRangeTest() {
         Map<String,String> entries = dictionary.getRange("cancel","kickball");
@@ -79,14 +80,17 @@ public class DictionaryTest {
     public void nullKey() {
         dictionary.add(null, "sadf");
     }
+    
     @Test(expected=NullPointerException.class)
     public void nullValue() {
         dictionary.add("ads", null);
     }
+    
     @Test(expected=NullPointerException.class)
     public void keyValueNull (){
         dictionary.add(null, null);
     }
+    
     @Test(expected=NullPointerException.class)
     public void nullDelete(){
         dictionary.delete(null);

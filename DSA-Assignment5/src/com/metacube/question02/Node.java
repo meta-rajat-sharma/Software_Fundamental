@@ -1,4 +1,4 @@
-package com.metacube.Question02;
+package com.metacube.question02;
 
 public class Node {
     public Employee data;

@@ -1,4 +1,4 @@
-package com.metacube.Question01;
+package com.metacube.question01;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -15,7 +15,7 @@ public class BinarySearchTree {
 	 * add the key value pair to the BST
 	 * @param key
 	 * @param value
-	 * @return true if added, else false`
+	 * @return true if added, else false
 	 */
 	public boolean add(String key,String value){
 		if(root == null){
@@ -49,6 +49,7 @@ public class BinarySearchTree {
         return result;
 	    
 	}
+	
     /**
      * @param key1
      * @param key2
@@ -60,14 +61,15 @@ public class BinarySearchTree {
 	    this.keyValueList = new LinkedHashMap<String,String>();
 	     return result;
 	}
+	
 	// create a HashMap by traversing the tree inorder
 	private void treeToList(BSTNode node){
 	    
 	    if(node == null) {
 	        return;
 	    }
-	    treeToList(node.getLeft());
 	    
+	    treeToList(node.getLeft());
 	    this.keyValueList.put(node.getKey(),node.getValue());
 	    treeToList(node.getRight());
 	    
@@ -77,9 +79,9 @@ public class BinarySearchTree {
 	private void treeToListRange(BSTNode node,String key1,String key2){
         
         if(node == null || node.getKey().compareTo(key2)>0) {
-            
             return;
         }
+        
         treeToListRange(node.getLeft(),key1,key2);
         if((node.getKey().equals(key1)||node.getKey().compareTo(key1)>0 )&&
             (node.getKey().equals(key2)||node.getKey().compareTo(key2)<0)) {
@@ -159,6 +161,5 @@ public class BinarySearchTree {
 		}
 		return true;
 	}
-	
 	
 }

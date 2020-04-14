@@ -1,4 +1,4 @@
-package com.metacube.Question02;
+package com.metacube.question02;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
@@ -25,7 +25,6 @@ public class TestLinkedListEmployee {
             result[i] = n.getData().getSalary();
             i++;
             n = n.next;
-
         }
         result[i] = n.getData().getSalary();
         assertArrayEquals(expected, result);

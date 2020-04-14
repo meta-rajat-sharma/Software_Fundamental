@@ -1,4 +1,4 @@
-package com.metacube.Question01;
+package com.metacube.question01;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -30,6 +30,7 @@ public class DictionaryImpl implements Dictionary {
     @SuppressWarnings("unchecked")
     private void initialize(JSONObject json) {
         Map<String, String> entries = new HashMap<String, String>();
+        
         try {
             entries = new ObjectMapper().readValue(json.toJSONString(), HashMap.class);
         } catch (JsonParseException e) {
@@ -41,7 +42,6 @@ public class DictionaryImpl implements Dictionary {
         }
 
         for (String key : entries.keySet()) {
-
             this.add(key, entries.get(key));
         }
 
@@ -114,3 +114,4 @@ public class DictionaryImpl implements Dictionary {
 
 
 }
+

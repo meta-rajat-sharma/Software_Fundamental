@@ -1,4 +1,4 @@
-package com.metacube.Question01;
+package com.metacube.question01;
 
 public class BSTNode {
 	private String key,value;
@@ -121,3 +121,4 @@ public class BSTNode {
 	    return this;
 	}
 }
+

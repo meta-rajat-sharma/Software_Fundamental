@@ -1,4 +1,4 @@
-package com.metacube.Question01;
+package com.metacube.question01;
 
 import java.util.Map;
 
